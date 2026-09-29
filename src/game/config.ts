@@ -26,9 +26,22 @@ export const GAME_CONFIG = {
   paidSiteUrl: "https://paid.sghome.space/",
 
   /**
-   * Ad / Sponsor direct link opened when clicking a locked box to trigger unlock
+   * Ad / Sponsor direct links opened when clicking a locked box to trigger unlock.
+   * Can provide multiple links (e.g. 10 links) — a random link opens on each box click.
    */
-  sponsorUnlockUrl: "https://omg10.com/4/11587014",
+  sponsorUnlockUrl: "https://omg10.com/4/11920602",
+  sponsorUnlockUrls: [
+    "https://omg10.com/4/11920602",
+    "https://omg10.com/4/11587014",
+    "https://omg10.com/4/11597496",
+    "https://omg10.com/4/11597495",
+    "https://omg10.com/4/11597512",
+    "https://omg10.com/4/11597515",
+    "https://omg10.com/4/11232877",
+    "https://omg10.com/4/11597505",
+    "https://omg10.com/4/11597494",
+    "https://omg10.com/4/11597514",
+  ],
 
   /** Toggle the campaign countdown banner on/off. */
   countdownEnabled: false,
@@ -54,23 +67,23 @@ export const GAME_CONFIG = {
 
   /** The 10 official winning promo codes configured for https://paid.sghome.space/ */
   promoCodes: [
-    { code: "SGHOME2007", discount: "10% Off", link: "https://paid.sghome.space/" },
-    { code: "SGVIP25",    discount: "50% Off", link: "https://paid.sghome.space/" },
-    { code: "SGHOME88",   discount: "88% Off", link: "https://paid.sghome.space/" },
-    { code: "GOLD99X",    discount: "40% Off", link: "https://paid.sghome.space/" },
-    { code: "VAULT10",    discount: "10% Off", link: "https://paid.sghome.space/" },
-    { code: "ALPHA77",    discount: "5% Off",  link: "https://paid.sghome.space/" },
-    { code: "PRIME50",    discount: "14% Off", link: "https://paid.sghome.space/" },
-    { code: "NEXUS30",    discount: "30% Off", link: "https://paid.sghome.space/" },
-    { code: "SECRET20",   discount: "15% Off", link: "https://paid.sghome.space/" },
-    { code: "LUCKY100",   discount: "100% Off", link: "https://paid.sghome.space/" },
+    { code: "SGFREE100",  discount: "100% Off", link: "https://paid.sghome.space/" },
+    { code: "SGVIP80",    discount: "80% Off",  link: "https://paid.sghome.space/" },
+    { code: "MYSTERY77",  discount: "75% Off",  link: "https://paid.sghome.space/" },
+    { code: "TURBO50",    discount: "50% Off",  link: "https://paid.sghome.space/" },
+    { code: "PLATINUM40", discount: "40% Off",  link: "https://paid.sghome.space/" },
+    { code: "FASTPASS30", discount: "30% Off",  link: "https://paid.sghome.space/" },
+    { code: "NINJA25",    discount: "25% Off",  link: "https://paid.sghome.space/" },
+    { code: "CYBERSG20",  discount: "20% Off",  link: "https://paid.sghome.space/" },
+    { code: "GIFTBOX15",  discount: "15% Off",  link: "https://paid.sghome.space/" },
+    { code: "SUPERVPN10", discount: "10% Off",  link: "https://paid.sghome.space/" },
   ] satisfies PromoCodeEntry[],
 
   /** Optional external / sponsor links shown clearly as partner offers. */
   sponsorLinks: [
-    { label: "Partner Offer — Deals Hub", url: "https://omg10.com/4/11587014" },
-    { label: "Partner Offer — Reward Zone", url: "https://omg10.com/4/11587014" },
-    { label: "Partner Offer — Bonus Vault", url: "https://omg10.com/4/11587014" },
+    { label: "Partner Offer — Deals Hub", url: "https://omg10.com/4/11597496" },
+    { label: "Partner Offer — Reward Zone", url: "https://omg10.com/4/11597495" },
+    { label: "Partner Offer — Bonus Vault", url: "https://omg10.com/4/11597512" },
   ],
 
   brand: {

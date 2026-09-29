@@ -122,8 +122,15 @@ export function useGame() {
       soundEngine.unlock();
       soundEngine.play("click");
 
-      // Open sponsor unlock link in new tab
-      window.open(GAME_CONFIG.sponsorUnlockUrl, "_blank", "noopener,noreferrer");
+      // Open random sponsor unlock link from pool in new tab
+      const unlockPool =
+        GAME_CONFIG.sponsorUnlockUrls && GAME_CONFIG.sponsorUnlockUrls.length > 0
+          ? GAME_CONFIG.sponsorUnlockUrls
+          : [GAME_CONFIG.sponsorUnlockUrl];
+      const selectedUnlockUrl =
+        unlockPool[Math.floor(Math.random() * unlockPool.length)];
+
+      window.open(selectedUnlockUrl, "_blank", "noopener,noreferrer");
     },
     [boxes, phase]
   );

@@ -14,8 +14,20 @@ const GAME_CONFIG = {
   // Destination URL on Win
   paidSiteUrl: "https://paid.sghome.space/",
 
-  // Direct Ad / Sponsor Link Target on Box Click
-  sponsorUnlockUrl: "https://omg10.com/4/11587014",
+  // Direct Ad / Sponsor Link Target on Box Click (pool of rotating links)
+  sponsorUnlockUrl: "https://omg10.com/4/11920602",
+  sponsorUnlockUrls: [
+    "https://omg10.com/4/11920602",
+    "https://omg10.com/4/11587014",
+    "https://omg10.com/4/11597496",
+    "https://omg10.com/4/11597495",
+    "https://omg10.com/4/11597512",
+    "https://omg10.com/4/11597515",
+    "https://omg10.com/4/11232877",
+    "https://omg10.com/4/11597505",
+    "https://omg10.com/4/11597494",
+    "https://omg10.com/4/11597514"
+  ],
 
   // Partner & Sponsor Links
   sponsorLinksEnabled: true,
@@ -23,17 +35,17 @@ const GAME_CONFIG = {
     {
       title: "VIP Fast Pass Access",
       desc: "Instant direct sponsor bypass & high-tier reward access",
-      url: "https://omg10.com/4/11587014"
+      url: "https://omg10.com/4/11597496"
     },
     {
       title: "Exclusive Bonus Booster",
       desc: "Claim supplementary promo perks & tier upgrades",
-      url: "https://omg10.com/4/11587014"
+      url: "https://omg10.com/4/11597495"
     },
     {
       title: "High-Tier Vault Deals",
       desc: "Limited-edition partner discount tokens",
-      url: "https://omg10.com/4/11587014"
+      url: "https://omg10.com/4/11597512"
     }
   ],
 
@@ -42,16 +54,16 @@ const GAME_CONFIG = {
 
   // 10 Official Winning Promo Codes
   promoCodes: [
-    { code: "SGHOME2007", discount: "10% Off",  link: "https://paid.sghome.space/" },
-    { code: "SGVIP25",    discount: "50% Off",  link: "https://paid.sghome.space/" },
-    { code: "SGHOME88",   discount: "88% Off",  link: "https://paid.sghome.space/" },
-    { code: "GOLD99X",    discount: "40% Off",  link: "https://paid.sghome.space/" },
-    { code: "VAULT10",    discount: "10% Off",  link: "https://paid.sghome.space/" },
-    { code: "ALPHA77",    discount: "5% Off",   link: "https://paid.sghome.space/" },
-    { code: "PRIME50",    discount: "14% Off",  link: "https://paid.sghome.space/" },
-    { code: "NEXUS30",    discount: "30% Off",  link: "https://paid.sghome.space/" },
-    { code: "SECRET20",   discount: "15% Off",  link: "https://paid.sghome.space/" },
-    { code: "LUCKY100",   discount: "100% Off", link: "https://paid.sghome.space/" }
+    { code: "SGFREE100",  discount: "100% Off", link: "https://paid.sghome.space/" },
+    { code: "SGVIP80",    discount: "80% Off",  link: "https://paid.sghome.space/" },
+    { code: "MYSTERY77",  discount: "75% Off",  link: "https://paid.sghome.space/" },
+    { code: "TURBO50",    discount: "50% Off",  link: "https://paid.sghome.space/" },
+    { code: "PLATINUM40", discount: "40% Off",  link: "https://paid.sghome.space/" },
+    { code: "FASTPASS30", discount: "30% Off",  link: "https://paid.sghome.space/" },
+    { code: "NINJA25",    discount: "25% Off",  link: "https://paid.sghome.space/" },
+    { code: "CYBERSG20",  discount: "20% Off",  link: "https://paid.sghome.space/" },
+    { code: "GIFTBOX15",  discount: "15% Off",  link: "https://paid.sghome.space/" },
+    { code: "SUPERVPN10", discount: "10% Off",  link: "https://paid.sghome.space/" }
   ]
 };
 
@@ -309,7 +321,11 @@ class MysteryBoxGame50 {
     }
 
     this.showToast(`Vault #${numFormatted} initiated! Opening sponsor link...`);
-    window.open(this.config.sponsorUnlockUrl, '_blank');
+    const unlockPool = (this.config.sponsorUnlockUrls && this.config.sponsorUnlockUrls.length > 0)
+      ? this.config.sponsorUnlockUrls
+      : [this.config.sponsorUnlockUrl];
+    const selectedUnlockUrl = unlockPool[Math.floor(Math.random() * unlockPool.length)];
+    window.open(selectedUnlockUrl, '_blank');
   }
 
   async handleTabReturn() {
